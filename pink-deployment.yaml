@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-pink
+  labels:
+    app: demo
+    version: pink
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: demo
+      version: pink
+  template:
+    metadata:
+      labels:
+        app: demo
+        version: pink
+    spec:
+      containers:
+      - name: demo-pink
+        image: chaitramk23/demo-pink:v1
+        ports:
+        - containerPort: 80
