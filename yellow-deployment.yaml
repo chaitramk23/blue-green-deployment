@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-yellow
+  labels:
+    app: demo
+    version: yellow
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: demo
+      version: yellow
+  template:
+    metadata:
+      labels:
+        app: demo
+        version: yellow
+    spec:
+      containers:
+      - name: demo-yellow
+        image: chaitramk23/demo-yellow:v1
+        ports:
+        - containerPort: 80
