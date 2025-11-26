@@ -1,0 +1,2 @@
+FROM nginx:alpine
+COPY pink-index.html /usr/share/nginx/html/index.html
